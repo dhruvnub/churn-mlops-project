@@ -18,4 +18,4 @@ model.fit(X, y)
 
 joblib.dump(model, "churn_model.pkl")
 
-print("Churn model  successfully")
+print("Churn model trained successfully")
