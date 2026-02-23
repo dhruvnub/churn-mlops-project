@@ -2,21 +2,19 @@ name: Churn GitHub Actions CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-            - name: Upload Model Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: churn-model
-          path: churn_model.pkl
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Set Up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -30,10 +28,10 @@ jobs:
           python train.py
 
       - name: Upload Model Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: churn-model
           path: churn_model.pkl
 
-      - name: Build Complete
-        run: echo "GitHub Actions CI executed successfully"
+      - name: Build Success
+        run: echo "GitHub Actions CI pipeline executed successfully"
