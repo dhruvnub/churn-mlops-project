@@ -11,7 +11,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat '"C:\\Users\\Tanmay\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe" -m pip install -r requirements.txt'
+                bat '"C:\\Program Files\\Python310\\python.exe" -m pip install -r requirements.txt'
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Train Model') {
             steps {
-                bat '"C:\\Users\\Tanmay\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe" train.py'
+                bat '"C:\\Program Files\\Python310\\python.exe" train.py'
             }
         }
 
